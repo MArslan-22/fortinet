@@ -28,15 +28,22 @@ class QuizEngine {
     }
 
     init() {
+        document.getElementById('start-btn-10').onclick = () => this.startQuiz(10);
         document.getElementById('start-btn-25').onclick = () => this.startQuiz(25);
+        document.getElementById('start-btn-50').onclick = () => this.startQuiz(50);
+        document.getElementById('start-btn-60').onclick = () => this.startQuiz(60);
         this.nextBtn.onclick = () => this.handleNext();
     }
 
     startQuiz(count) {
-        // Shuffle and slice
-        this.questions = [...nse4Questions]
-            .sort(() => Math.random() - 0.5)
-            .slice(0, Math.min(count, nse4Questions.length));
+        // Shuffle using Fisher-Yates algorithm
+        let shuffled = [...nse4Questions];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        
+        this.questions = shuffled.slice(0, Math.min(count, shuffled.length));
         
         this.currentQuestionIndex = 0;
         this.score = 0;
