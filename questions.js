@@ -808,7 +808,7 @@ const nse4Questions = [
         options: ["A health app.", "The technical support and warranty service for Fortinet products.", "A firewall feature.", "A training portal."],
         correct: 1,
         explanation: "Provides access to support engineers and hardware replacement."
-    }
+    },
     {
         question: "When configuring HA, what is the effect of the 'set override enable' command?",
         options: ["The cluster will never fail over.", "The unit with the highest priority always becomes Primary after a reboot.", "The Secondary unit takes over immediately.", "It disables heartbeat monitoring."],
