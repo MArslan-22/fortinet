@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSE4 Mock Test | FortiTrainer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body class="bg-dark text-light">
+    <div id="app" class="container py-5">
+        <header class="text-center mb-5">
+            <h1 class="display-4 fw-bold gradient-text">NSE4 Mock Test</h1>
+            <p class="lead text-muted">Preparation Platform for FortiOS 7.6 Certification</p>
+            <div id="progress-container" class="mt-4 hide">
+                <div class="d-flex justify-content-between mb-2">
+                    <span id="progress-text" class="text-secondary small">Question 1 of 25</span>
+                    <span id="score-text" class="text-primary small fw-bold">Score: 0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+            </div>
+        </header>
+
+        <main id="quiz-container" class="glass-card p-4 mx-auto" style="max-width: 800px;">
+            <div id="start-screen" class="text-center py-5">
+                <div class="icon-badge mb-4">🛡️</div>
+                <h2 class="mb-3">Ready to begin?</h2>
+                <p class="text-muted mb-4">Each attempt consists of 25 randomized questions from our NSE4 database. Pass mark is 70%.</p>
+                <div class="d-flex gap-3 justify-content-center">
+                    <button id="start-btn-25" class="btn btn-primary btn-lg px-5">Start 25 Questions</button>
+                </div>
+            </div>
+
+            <div id="question-screen" class="hide">
+                <div id="question-text" class="h4 mb-4 lh-base"></div>
+                <div id="options-container" class="d-flex flex-column gap-3">
+                    <!-- Options injected here -->
+                </div>
+                
+                <div id="explanation-container" class="mt-4 p-3 alert-info hide">
+                    <div class="d-flex align-items-baseline gap-2 mb-1">
+                        <span class="badge bg-info">Explanation</span>
+                        <span id="explanation-text" class="small"></span>
+                    </div>
+                </div>
+
+                <div class="mt-5 pt-3 border-top border-secondary d-flex justify-content-end">
+                    <button id="next-btn" class="btn btn-outline-primary px-4" disabled>Next Question</button>
+                </div>
+            </div>
+
+            <div id="result-screen" class="text-center py-5 hide">
+                <h2 class="mb-4">Test Completed!</h2>
+                <div class="score-display mb-4">
+                    <div id="final-score" class="display-1 fw-bold">0%</div>
+                    <p id="result-message" class="lead"></p>
+                </div>
+                <button onclick="location.reload()" class="btn btn-primary px-5">Restart Session</button>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
